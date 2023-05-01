@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="card">
+		<h2>Авторизация</h2>
+		<form [formGroup]="form">
+			<label name="loginError" ngDefaultControl>
+					{{ loginError }}
+			</label>
+			<input
+				matInput
+				name="user"
+				placeholder="Логин"
+				value="login"
+				formControlName="login"
+			/>
+			<input
+				matInput
+				type="password"
+				name="password"
+				placeholder="Пароль"
+				formControlName="password"
+			/>
+			<button mat-raised-button color="primary" (click)="submitForm()">
+				Войти
+			</button>
+		</form>
+	</div>
+</div>

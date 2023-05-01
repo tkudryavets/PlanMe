@@ -3,14 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PageWrapperModule } from './components/shared/page-wrapper/page-wrapper.module';
+import { NavPanelModule } from './components/shared/nav-panel/nav-panel.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule, 
+    PageWrapperModule,
+    NavPanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

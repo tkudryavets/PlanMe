@@ -1,0 +1,19 @@
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+  
+<div class="wrapper">
+  <div class="img"></div>
+  <nav>
+    <ul class="menu">
+      <li
+        class="menu-item"
+        *ngFor="let link of navigationLinks"
+        routerLinkActive="active"
+        [routerLink]="'/' + link.link"
+      >
+        <mat-icon class="material-icons-outlined" *ngIf="link.icon">{{link.icon}}_outlined</mat-icon>
+        <span class="menu-item-title">{{ link.title }}</span>
+      </li>
+    </ul>
+  </nav>
+  <h4>{{ currentUser }}</h4>
+</div>

@@ -1,0 +1,51 @@
+:host {
+  h5 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0;
+    color: rgb(48, 48, 48);
+  }
+
+  h6 {
+    color: dimgray;
+    margin: 0.25rem 0rem;
+  }
+
+  p {
+    color: rgb(48, 48, 48);
+    font-size: 0.75rem;
+    margin: 0.25rem 0rem;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    max-width: 8rem;
+    min-width: 8rem;
+    padding: 0.5rem;
+    border: 1px solid rgb(226, 226, 226);
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .blue {
+    background-color: rgb(198, 233, 255);
+  }
+
+  .white {
+    background-color: white;
+  }
+
+  .gray {
+    background-color: rgb(241, 241, 241);
+  }
+
+  .selected {
+    border: 1px solid #529ff7;
+    box-sizing: border-box;
+  }
+  
+}

@@ -1,0 +1,34 @@
+<ng-container *ngIf="isToday; else notToday">
+    <div class="gray" [ngClass]="{'selected': selected}">
+      <h6 *ngIf="isFirstWeek">
+      {{ week[copyDay.date.getDay()] }}, {{ copyDay.date.getDate() }}
+    </h6>
+    <h6 *ngIf="!isFirstWeek">
+      {{ copyDay.date.getDate() }}
+    </h6>
+    <h5 *ngIf="day.advent">
+      {{ copyDay.advent }}
+    </h5>
+    <p *ngIf="day.participants">
+      {{ day.participants }}
+    </p>
+  </div>
+</ng-container>
+
+<ng-template #notToday>
+  <div [ngClass]="{'blue': status, 'white': !status, 'selected': selected}">
+    <h6 *ngIf="isFirstWeek">
+      {{ week[copyDay.date.getDay()] }}, {{ copyDay.date.getDate() }}
+    </h6>
+    <h6 *ngIf="!isFirstWeek">
+      {{ copyDay.date.getDate() }}
+    </h6>
+    <h5 *ngIf="day.advent">
+      {{ copyDay.advent }}
+    </h5>
+    <p *ngIf="day.participants">
+      {{ day.participants }}
+    </p>
+  </div>
+</ng-template>
+

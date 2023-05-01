@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 8rem);
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 4rem;
+    height: 11.5rem;
+    border-radius: 4px;
+    box-shadow: 0 0 4px 0 rgba(54, 54, 54, 0.35);
+}
+
+.card h2 {
+    margin: 0;
+}
+.card label {
+    font-size: 0.75rem
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 17rem;
+}
+
+input {
+    outline:none;
+}

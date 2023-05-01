@@ -1,0 +1,66 @@
+<div class="advForm">
+  <div mat-dialog-title>
+    <h4 class="title">Добавить событие</h4>
+    <mat-dialog-actions>
+      <mat-icon aria-hidden="false" mat-dialog-close>close</mat-icon>
+    </mat-dialog-actions>
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <form [formGroup]="requestForm" validate>
+      <div class="dialog-content-item">
+        <mat-form-field>
+          <mat-label class="label">Дата</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            placeholder="мм/дд/гггг"
+            formControlName="date"
+            
+          />
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon class="material-icons-outlined">
+              calendar_today
+            </mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="dialog-content-item">
+        <mat-label class="label">Событие</mat-label>
+      </div>
+      <div class="dialog-content-item">
+        <textarea matInput class="textarea" formControlName="advent"></textarea>
+      </div>
+
+      <div class="dialog-content-item">
+        <mat-label class="label">Участники</mat-label>
+      </div>
+      <div class="dialog-content-item">
+        <textarea
+          matInput
+          class="textarea"
+          formControlName="participants"
+        ></textarea>
+      </div>
+
+      <mat-dialog-actions>
+        <button
+          mat-raised-button
+          color="primary"
+          class="action-button"
+          (click)="onSend()"
+        >
+          Save
+        </button>
+        <button
+          mat-raised-button
+          class="action-button"
+          color="secondary"
+          mat-dialog-close
+        >
+          Cancel
+        </button>
+      </mat-dialog-actions>
+    </form>
+  </mat-dialog-content>
+</div>
