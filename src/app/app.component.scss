@@ -9,3 +9,10 @@ body {
   overflow: hidden;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  app-page-wrapper {
+    width: 100%;
+  }
+}

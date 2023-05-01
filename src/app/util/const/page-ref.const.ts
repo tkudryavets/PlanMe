@@ -1,5 +1,5 @@
 export enum NavigationIcons {
-	PROFILE = 'person',
+	DASHBOARD = 'dashboard',
 	CALENDAR = 'calendar_month',
 	INFO = 'info',
 	MAIN = 'home',
@@ -18,7 +18,7 @@ export class PageRefConst {
 	static readonly LOGIN: PageRefModel = {
 		name: 'auth/login',
 		link: '/auth/login',
-        title: 'Авторизация'
+        title: 'Authorization'
 	};
 
 	static readonly EMPTY: PageRefModel = {
@@ -30,21 +30,21 @@ export class PageRefConst {
     static readonly DASHBOARD: PageRefModel = {
 		name: 'dashboard',
 		link: '/dashboard',
-        title: 'Рабочий стол',
-		icon: NavigationIcons.PROFILE
+        title: 'Dashboard',
+		icon: NavigationIcons.DASHBOARD
 	};
 
     static readonly CALENDAR: PageRefModel = {
 		name: 'calendar',
 		link: '/calendar',
-        title: 'Календарь',
+        title: 'Calendar',
 		icon: NavigationIcons.CALENDAR
 	};
 
     static readonly STATISTICS: PageRefModel = {
 		name: 'statistics',
 		link: '/statistics',
-        title: 'Статистика',
+        title: 'Statistics',
 		icon: NavigationIcons.STATISTICS
 	};
 

@@ -12,7 +12,6 @@ export class NavPanelComponent {
   public currentUser: string = '';
 
   constructor() {
-    console.log(this.navigationLinks)
    // this.currentUser = this.authService.currentUser;
   }
 }

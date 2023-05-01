@@ -15,7 +15,8 @@ const routes: Routes = [
 @NgModule({
 	imports: [
 		RouterModule.forChild(routes),
-		NgxsModule.forFeature([AuthState])],
+		// NgxsModule.forFeature([AuthState])
+	],
 	exports: [RouterModule],
 })
 
