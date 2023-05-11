@@ -1,0 +1,99 @@
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+.search {
+    display: flex;
+    gap: 0.25rem;
+    color:#4a4a4a;
+    align-items: center;
+}
+
+.buttons button {
+    background-color: lightskyblue;
+    padding: 0.25rem 0.5rem;
+    border: none;
+}
+
+.topPanel {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: rgb(241, 241, 241);
+    height: 4rem;
+    padding: 0 1rem 1rem 1rem;
+    width: 100%;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    outline: none;
+    width: 13rem;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border: none;
+    box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.calendarTable {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border: 1px solid rgb(226, 226, 226);
+    min-height: 80%;
+}
+
+.datepicker button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.4rem;
+    height: 1.5rem;
+
+    background-color: white;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+}
+
+.arrow {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+}
+
+.today {
+    margin-left: 1rem;
+}
+
+mat-icon {
+    width: 1rem;
+    height: 1rem;
+    font-size: 1rem;
+    color: #4a4a4a;
+}
+
+.datepicker {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0 1rem;
+}
+
+app-calendar-item {
+    width: 0;
+    flex-basis: 14.285714285714% !important;
+    min-height: 100%;
+}

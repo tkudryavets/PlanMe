@@ -1,1 +1,33 @@
-<p>calendar works!</p>
+<div class="container">
+    <div class="topPanel">
+        <div class="buttons">
+            <button (click)="addAdvent()">Добавить</button>
+            <button (click)="updateDay()">Обновить</button>
+        </div>
+        <div class="search">
+            <mat-icon class="material-symbols-outlined">search</mat-icon>
+            <input type="text" placeholder="Событие, дата или участник" (keyup)="onKey($event)">
+        </div>
+    </div>
+    <div style="width: 100%; height: 100%">
+        <div class="datepicker">
+            <button class="arrow" (click)="minusMonth()">
+                <mat-icon class="material-icons-outlined">arrow_left</mat-icon>
+            </button>
+            <h3>{{ months[selectedMonth.getMonth()] }} {{ selectedMonth.getFullYear() }}</h3>
+            <button class="arrow" (click)="plusMonth()">
+                <mat-icon class="material-icons-outlined">arrow_right</mat-icon>
+            </button>
+            <button class="today" (click)="selectToday()">Сегодня</button>
+        </div>
+        <div class="calendarTable">
+            <ng-container *ngFor="let day of firstWeek">
+                <app-calendar-item [day]="day" [isFirstWeek]="true" (click)="onSelect(day)" [selected]="day?.id == selectedDay?.id"></app-calendar-item>
+            </ng-container>
+            <ng-container *ngFor="let day of days">
+                <app-calendar-item [day]="day" [isFirstWeek]="false" (click)="onSelect(day)" [selected]="day?.id == selectedDay?.id"></app-calendar-item>
+            </ng-container>
+        </div>
+    </div>
+</div>
+

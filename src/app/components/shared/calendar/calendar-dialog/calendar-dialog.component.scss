@@ -1,46 +1,51 @@
-:host {
+  .advForm {
+    display: flex;
+    flex-direction: column;
+    min-width: 20rem;
+    min-height: 20rem;
+    padding: 2rem;
+    overflow: hidden;
+  }
 
   .dialog-content-item {
     min-width: 1.5rem;
     padding-bottom: 0.5rem;
-   
+    
     &.last {
       padding-bottom: 1rem;
     }
   }
 
-  .advForm {
-    width: 20rem;
-    overflow: hidden;
-  }
 
-  .mat-dialog-actions {
-    height: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-  }
+::ng-deep {
+    mat-dialog-actions {
+      height: 1.5rem;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 1rem;
+    }
 
-  .mat-dialog-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0;
-    padding-bottom: 0.5rem;
-
-    .title {
+    .mat-dialog-title {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       margin: 0;
-      font-weight: 500;
-      font-size: 1rem;
-    }
-    
-    .mat-dialog-actions {
-      min-height: 1rem;
-      margin: 0;
-      padding: 0;
+      padding-bottom: 0.5rem;
+
+      .title {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+      
+      .mat-dialog-actions {
+        min-height: 1rem;
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 
@@ -56,10 +61,8 @@
     width: 19rem;
     resize: none;
   }
-
-  .mat-dialog-content {
+  
+  ::ng-deep.mat-dialog-content {
     height: 17rem;
     overflow: hidden;
   }
-
-}

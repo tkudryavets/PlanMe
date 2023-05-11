@@ -1,9 +1,8 @@
 <div class="advForm">
-  <div class="mat-dialog-title">
-    <h4 class="title">Добавить событие</h4>
+  <div mat-dialog-title>
+    <h4 class="title">Обновить событие</h4>
     <mat-dialog-actions>
-      <mat-icon class="material-symbols-outlined" mat-dialog-close>close</mat-icon>
-      <!-- <mat-icon aria-hidden="false" mat-dialog-close>close</mat-icon> -->
+      <mat-icon aria-hidden="false" mat-dialog-close>close</mat-icon>
     </mat-dialog-actions>
   </div>
   <mat-dialog-content class="mat-typography">
@@ -14,9 +13,8 @@
           <input
             matInput
             [matDatepicker]="picker"
-            placeholder="дд/мм/гггг"
+            placeholder="мм/дд/гггг"
             formControlName="date"
-            
           />
           <mat-datepicker-toggle matSuffix [for]="picker">
             <mat-icon matDatepickerToggleIcon class="material-icons-outlined">
@@ -57,9 +55,10 @@
           mat-raised-button
           class="action-button"
           color="secondary"
+          (click)="onDelete()"
           mat-dialog-close
         >
-          Cancel
+          Delete
         </button>
       </mat-dialog-actions>
     </form>

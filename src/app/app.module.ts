@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PageWrapperModule } from './components/shared/page-wrapper/page-wrapper.module';
 import { NavPanelModule } from './components/shared/nav-panel/nav-panel.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,10 @@ import { NavPanelModule } from './components/shared/nav-panel/nav-panel.module';
     AppRoutingModule,
     HttpClientModule, 
     PageWrapperModule,
-    NavPanelModule
+    NavPanelModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [ provideAnimations(), { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

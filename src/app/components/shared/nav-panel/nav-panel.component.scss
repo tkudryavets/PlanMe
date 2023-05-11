@@ -1,12 +1,11 @@
 @import "../../../style/variables";
 
 .wrapper {
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 5rem;
   width: 10rem;
-  height: calc(100vh - 8rem);
+  height: 100%;
   padding: 2rem 2rem 5rem 2rem;
   background-color: $secondary-accent-100;
   margin-top: 0;
