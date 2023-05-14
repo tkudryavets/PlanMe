@@ -26,20 +26,38 @@
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
       </div>
+      
       <div class="dialog-content-item">
         <mat-label class="label">Событие</mat-label>
+        <textarea matInput class="textarea" formControlName="advent" rows="2"></textarea>
       </div>
-      <div class="dialog-content-item">
-        <textarea matInput class="textarea" formControlName="advent"></textarea>
+
+      <div class="select-container">
+        <div class="dialog-content-item">
+            <mat-form-field appearance="fill">
+              <mat-label class="label">Повтор</mat-label>
+              <mat-select formControlName="repeat">
+                <mat-option *ngFor="let period of REPEAT_PERIOD" [value]="period">
+                  {{period.text}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="dialog-content-item">
+            <mat-form-field appearance="fill">
+              <mat-label class="label">Категория</mat-label>
+              <mat-select formControlName="category">
+                <mat-option *ngFor="let item of CATEGORIES" [value]="item">
+                  {{item}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
       </div>
 
       <div class="dialog-content-item">
         <mat-label class="label">Участники</mat-label>
-      </div>
-      <div class="dialog-content-item">
-        <textarea
-          matInput
-          class="textarea"
+        <textarea matInput class="textarea" rows="2"
           formControlName="participants"
         ></textarea>
       </div>

@@ -3,9 +3,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { Select, Store } from '@ngxs/store';
 import { Subscription, Observable } from 'rxjs';
 import { MONTHS } from 'src/app/util/const/month.const';
+import { REPEAT_PERIOD } from 'src/app/util/const/repeat-period.const';
 import { IDay } from '../../interfaces/IDay.interface';
 import { CalendarDialogComponent } from '../../shared/calendar/calendar-dialog/calendar-dialog.component';
-import { CalendarUpdateDialogComponent } from '../../shared/calendar/calendar-update-dialog/calendar-update-dialog.component';
 
 @Component({
   selector: 'app-calendar',
@@ -20,6 +20,7 @@ export class CalendarComponent implements OnInit {
   public plans: IDay[] = [];
   public selectedDay: IDay | undefined;
   private subscribes: Subscription[] = [];
+  private defaultPeriod = REPEAT_PERIOD[0];
 
 
 
@@ -75,6 +76,7 @@ export class CalendarComponent implements OnInit {
               day.getMonth() - 1,
               daysAmountPrev - i + 1
             ).getTime(),
+			repeat: this.defaultPeriod
           });
         } else {
           this.firstWeek.push({
@@ -90,6 +92,7 @@ export class CalendarComponent implements OnInit {
               day.getMonth() - 1,
               daysAmountPrev - i + 1
             ).getTime(),
+			repeat: this.defaultPeriod
           });
         }
       }
@@ -110,6 +113,7 @@ export class CalendarComponent implements OnInit {
             day.getMonth(),
             daysAmountPrev + 1
           ).getTime(),
+		  repeat: this.defaultPeriod
         });
     }
 
@@ -129,6 +133,7 @@ export class CalendarComponent implements OnInit {
             day.getMonth() - 1,
             daysAmountPrev - i + 1
           ).getTime(),
+		  repeat: this.defaultPeriod
         });
       }
 
@@ -144,6 +149,7 @@ export class CalendarComponent implements OnInit {
             advent: '',
             participants: '',
             id: new Date(day.getFullYear(), day.getMonth(), -i).getTime(),
+			repeat: this.defaultPeriod
           }
         );
       }
@@ -167,6 +173,7 @@ export class CalendarComponent implements OnInit {
             advent: '',
             participants: '',
             id: new Date(day.getFullYear(), day.getMonth(), i).getTime(),
+			repeat: this.defaultPeriod
           }
         );
       }
@@ -182,6 +189,7 @@ export class CalendarComponent implements OnInit {
             advent: '',
             participants: '',
             id: new Date(day.getFullYear(), day.getMonth() - 1, i).getTime(),
+			repeat: this.defaultPeriod
           }
         );
       }
@@ -231,12 +239,6 @@ export class CalendarComponent implements OnInit {
     }
   }
 
-  //   position: {
-  //     top: 'calc(-100vh)',
-  //     left: 'calc(25vw)',
-  // 	// top: 'calc(50vh - 10.875 * 1rem)',
-  //     // left: 'calc(50vw - 14.125 * 1rem)',
-  //   },
   public addAdvent() {
     const dialogRef = this.dialog.open(CalendarDialogComponent, {
 			minHeight: '25vh',
@@ -261,7 +263,7 @@ export class CalendarComponent implements OnInit {
       if (typeof this.selectedDay.date == 'string')
         this.selectedDay.date = new Date(this.selectedDay.date);
 
-      const dialogRef = this.dialog.open(CalendarUpdateDialogComponent, {
+      const dialogRef = this.dialog.open(CalendarDialogComponent, {
         position: {
           top: 'calc(50vh - 10.875 * 1rem)',
           left: 'calc(50vw - 14.125 * 1rem)',

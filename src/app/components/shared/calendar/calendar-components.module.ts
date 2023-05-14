@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalendarItemComponent } from './calendar-item/calendar-item.component';
 import { CalendarDialogComponent } from './calendar-dialog/calendar-dialog.component';
-import { CalendarUpdateDialogComponent } from './calendar-update-dialog/calendar-update-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -15,7 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [CalendarItemComponent, CalendarDialogComponent, CalendarUpdateDialogComponent],
+  declarations: [CalendarItemComponent, CalendarDialogComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -28,6 +27,6 @@ import { MatIconModule } from '@angular/material/icon';
 		MatInputModule,
     MatIconModule,
     MatButtonModule],
-  exports: [CalendarItemComponent, CalendarDialogComponent, CalendarUpdateDialogComponent],
+  exports: [CalendarItemComponent, CalendarDialogComponent],
 })
 export class CalendarComponentsModule {}

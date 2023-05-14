@@ -1,5 +1,6 @@
 import { Component, DoCheck, Input, OnInit } from '@angular/core';
 import { IDay } from 'src/app/components/interfaces/IDay.interface';
+import { REPEAT_PERIOD } from 'src/app/util/const/repeat-period.const';
 import { WEEK } from 'src/app/util/const/week.const';
 
 @Component({
@@ -9,7 +10,7 @@ import { WEEK } from 'src/app/util/const/week.const';
 })
 
 export class CalendarItemComponent implements DoCheck {
-  @Input() day: IDay = { date: new Date(), advent: '', participants: '' };
+  @Input() day: IDay = { date: new Date(), advent: '', participants: '', repeat: REPEAT_PERIOD[0] };
   @Input() isFirstWeek = false;
   @Input() selected = false;
 
@@ -18,7 +19,7 @@ export class CalendarItemComponent implements DoCheck {
 
   protected readonly week = WEEK;
 
-  public copyDay = { date: new Date(), advent: '', participants: '' };
+  public copyDay = { date: new Date(), advent: '', participants: '', repeat: REPEAT_PERIOD[0] };
 
   constructor() {}
 

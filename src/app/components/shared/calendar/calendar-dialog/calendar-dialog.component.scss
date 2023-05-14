@@ -1,29 +1,47 @@
-  .advForm {
-    display: flex;
-    flex-direction: column;
-    min-width: 20rem;
-    min-height: 20rem;
-    padding: 2rem;
-    overflow: hidden;
-  }
+  :host {
+    .advForm {
+      display: flex;
+      flex-direction: column;
+      min-width: 20rem;
+      min-height: 20rem;
+      padding: 2rem 4rem;
+    }
 
   .dialog-content-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     min-width: 1.5rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
     
     &.last {
       padding-bottom: 1rem;
     }
   }
 
+  .select-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
 
-::ng-deep {
+  ::ng-deep {
     mat-dialog-actions {
       height: 1.5rem;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       gap: 1rem;
+    }
+    
+    mat-dialog-content {
+      padding: 0 !important;
+      overflow-x: hidden;
+    }
+
+    mat-label {
+      font-size: 0.75rem;
     }
 
     .mat-dialog-title {
@@ -38,7 +56,7 @@
         align-items: center;
         margin: 0;
         font-weight: 500;
-        font-size: 1rem;
+        font-size: 1.25rem;
       }
       
       .mat-dialog-actions {
@@ -47,22 +65,20 @@
         padding: 0;
       }
     }
-  }
 
-  button {
-    height: 70%;
+    .mat-mdc-form-field-bottom-align {
+      height: 0;
+    }
   }
 
   .textarea {
+    font-size: 0.75rem;
+    font-weight: 500;
     margin: 0;
-    height: 2rem;
+    padding: 0.5rem;
+    resize: none;
+    overflow-y: hidden;
     border: 1px solid #9e9e9e;
     border-radius: 0.25rem;
-    width: 19rem;
-    resize: none;
   }
-  
-  ::ng-deep.mat-dialog-content {
-    height: 17rem;
-    overflow: hidden;
-  }
+}
