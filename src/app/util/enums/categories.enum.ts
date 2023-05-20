@@ -1,4 +1,4 @@
-export enum CATEGORIES {
+export enum Category {
     PERSONAL = 'Личная жизнь',
     WORK = 'Работа',
     HOUSE = 'Дом',

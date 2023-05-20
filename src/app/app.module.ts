@@ -9,6 +9,8 @@ import { NavPanelModule } from './components/shared/nav-panel/nav-panel.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { PlansState } from './states/plans.state';
+import { NgxsModule } from '@ngxs/store';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     HttpClientModule, 
     PageWrapperModule,
     NavPanelModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxsModule.forRoot([PlansState])
   ],
   providers: [ provideAnimations(), { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent]

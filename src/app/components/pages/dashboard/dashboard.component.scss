@@ -1,0 +1,27 @@
+@import "../../../style/variables";
+:host {
+    #chart-1 {
+        min-width: 400px;
+        margin: 35px auto;
+        padding: 1rem;
+    }
+    .main-container {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100%;
+        margin: 0;
+    }
+    .diagram-block {
+        margin: 0!important;
+        min-height: 200px!important;
+        border: 1px solid $primary-accent-700;
+        border-radius: 2rem;
+    }
+    ::ng-deep {
+        .apexcharts-legend.apx-legend-position-right {
+            justify-content: center !important;
+        }
+    }
+}

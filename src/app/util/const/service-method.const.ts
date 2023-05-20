@@ -17,4 +17,8 @@ export class ServiceMethodConst {
 		name: 'session/logout',
 		type: TypeRequest.POST
 	};
+	public static readonly ADD_PLAN: ServiceMethodModel = {
+		name: '',
+		type: TypeRequest.POST
+	}
 }

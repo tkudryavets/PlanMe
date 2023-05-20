@@ -2,7 +2,6 @@
     <div class="topPanel">
         <div class="buttons">
             <button mat-raised-button color="primary" (click)="addAdvent()">Добавить</button>
-            <button mat-raised-button color="secondary" (click)="updateDay()">Обновить</button>
         </div>
         <div class="search">
             <mat-icon class="material-symbols-outlined">search</mat-icon>
@@ -22,10 +21,10 @@
         </div>
         <div class="calendarTable">
             <ng-container *ngFor="let day of firstWeek">
-                <app-calendar-item [day]="day" [isFirstWeek]="true" (click)="onSelect(day)" [selected]="day?.id == selectedDay?.id"></app-calendar-item>
+                <app-calendar-item [day]="day" [isFirstWeek]="true"></app-calendar-item>
             </ng-container>
             <ng-container *ngFor="let day of days">
-                <app-calendar-item [day]="day" [isFirstWeek]="false" (click)="onSelect(day)" [selected]="day?.id == selectedDay?.id"></app-calendar-item>
+                <app-calendar-item [day]="day" [isFirstWeek]="false"></app-calendar-item>
             </ng-container>
         </div>
     </div>

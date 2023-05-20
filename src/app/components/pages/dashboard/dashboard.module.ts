@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -14,6 +15,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     MatButtonModule,
     MatInputModule,
     ReactiveFormsModule,
+    NgApexchartsModule
   ],
   exports: [DashboardComponent],
 })
