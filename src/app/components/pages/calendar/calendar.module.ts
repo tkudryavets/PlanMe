@@ -9,9 +9,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
-import { Routes, RouterModule } from "@angular/router";
-import { NgxsModule } from "@ngxs/store";
-import { AuthState } from "src/app/util/guards/auth/auth.state";
+
 import { CalendarComponentsModule } from "../../shared/calendar/calendar-components.module";
 import { CalendarRoutingModule } from "./calendar-routing.module";
 import { CalendarComponent } from "./calendar.component";

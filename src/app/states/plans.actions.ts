@@ -10,7 +10,7 @@ export class UpdatePlanAction {
 export class AddPlanAction {
 	static readonly type = '[Plans] add plan';
 
-	constructor(public payload: IEvent) {
+	constructor(public payload: any) {
 	}
 }
 

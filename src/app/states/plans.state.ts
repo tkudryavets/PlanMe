@@ -6,12 +6,13 @@ import { AddPlanAction, InitPlansAction, SelectMonthAction, UpdatePlanAction } f
 import { Events } from "../util/const/events.const";
 import { Category } from "../util/enums/categories.enum";
 import { REPEAT_PERIOD } from "../util/enums/repeat-period.enum";
+import { tap } from "rxjs";
 
 export class PlanStateModel {
     selectedDay?: IDay;
     selectedMonth?: Date;
     currentPlan?: IEvent;
-    plans?: {none: IEvent[], everyday: IEvent[]};
+    plans?: {none: IEvent[], everyday: IEvent[], weekly: IEvent[], monthly: IEvent[], yearly: IEvent[]};
 
 
 	constructor(obj?: any) {
@@ -90,41 +91,39 @@ export class PlansState {
 
 
     @Action(AddPlanAction)
-    addPlan(plan: IEvent) {
-        this.backendApiService.addPlan(plan);
+    addPlan(ctx: StateContext<PlanStateModel>, { payload }: AddPlanAction) {
+        this.backendApiService.addPlan(payload).pipe(
+			tap((result: any) => {
+				console.log(result)
+			})
+		).subscribe();
     }
 
 	@Action(UpdatePlanAction)
     updatePlan(ctx: StateContext<PlanStateModel>, {payload}: UpdatePlanAction) {
 		let firstSymbol = payload?.event?.id?.toString().charAt(0) ?? '';
-		let arrayEvents = ctx.getState()?.plans;
+		let arrayEvents = ctx.getState()?.plans!;
 		let index = -1;
-		switch (firstSymbol.toString()) {
-			case '1':
-				index = arrayEvents?.none.findIndex((item) => item.id == payload?.event.id) ?? -1;
-				if(payload?.event.repeat != REPEAT_PERIOD.NONE){
-					// TODO
-				}
-				else {
-					arrayEvents!.none[index] = payload.event;
-				}
-				break;
-			case '2':
-				index = arrayEvents?.everyday.findIndex((item) => item.id == payload?.event.id) ?? -1;
-				if(payload?.event.repeat != REPEAT_PERIOD.EVERYDAY){
-					// TODO
-				}
-				else {
-					arrayEvents!.everyday[index] = payload.event;
-				}
-				break;
-
-		}
-	
-		ctx.patchState({
-			...ctx.getState,
-			plans: arrayEvents
+		console.log('payload?.event.id', payload?.event.id)
+		
+		Object.values(arrayEvents).forEach(array => {
+			let i = array.findIndex((item) => item.id == payload?.event.id);
+			if (i != -1){
+				index = i;
+			}
+			if(index != -1) {
+				array[index] = payload!.event;
+				console.log('Update array[index]', array[index])
+			}
 		})
+		console.log(index)
+		
+	
+		// ctx.patchState({
+		// 	...ctx.getState,
+		// 	plans: arrayEvents
+		// })
+
         // this.backendApiService.updatePlan(plan);
     }
 

@@ -3,12 +3,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { Select, Store } from '@ngxs/store';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Subscription, Observable } from 'rxjs';
-import { MONTHS } from 'src/app/util/const/month.const';
 import { IDay, IEvent } from '../../interfaces/IDay.interface';
 import { CalendarDialogComponent } from '../../shared/calendar/calendar-dialog/calendar-dialog.component';
-import { REPEAT_PERIOD } from 'src/app/util/enums/repeat-period.enum';
-import { PlansState } from 'src/app/states/plans.state';
-import { AddPlanAction, InitPlansAction, SelectMonthAction } from 'src/app/states/plans.actions';
+import { InitPlansAction, SelectMonthAction, AddPlanAction } from 'app/states/plans.actions';
+import { PlansState } from 'app/states/plans.state';
+import { MONTHS } from 'app/util/const/month.const';
+import { REPEAT_PERIOD } from 'app/util/enums/repeat-period.enum';
 
 
 @Component({
@@ -237,8 +237,8 @@ export class CalendarComponent implements OnInit, OnDestroy {
       },
     });
     this.subscribes.push(
-      dialogRef.afterClosed().subscribe((event: IEvent) => {
-        this.store.dispatch(new AddPlanAction(event));
+      dialogRef.afterClosed().subscribe((event: any) => {
+        this.store.dispatch(new AddPlanAction(event.event));
       })
     );
   }

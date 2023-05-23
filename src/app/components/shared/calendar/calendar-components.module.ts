@@ -12,6 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [CalendarItemComponent, CalendarDialogComponent],
@@ -26,7 +27,8 @@ import { MatIconModule } from '@angular/material/icon';
 		MatFormFieldModule,
 		MatInputModule,
     MatIconModule,
-    MatButtonModule],
+    MatButtonModule,
+    MatCheckboxModule],
   exports: [CalendarItemComponent, CalendarDialogComponent],
 })
 export class CalendarComponentsModule {}

@@ -1,7 +1,7 @@
 export class AuthAction {
 	static readonly type = '[Auth] Login';
 
-	constructor(public payload: {request: any}) {
+	constructor(public payload: {username: string, password: string}) {
 	}
 }
 

@@ -1,7 +1,8 @@
 import { Time } from "@angular/common";
-import { Category } from "src/app/util/enums/categories.enum";
-import { REPEAT_PERIOD } from "src/app/util/enums/repeat-period.enum";
-import { Status } from "src/app/util/enums/status.enum";
+import { Category } from "app/util/enums/categories.enum";
+import { REPEAT_PERIOD } from "app/util/enums/repeat-period.enum";
+import { Status } from "app/util/enums/status.enum";
+
 
 export interface IDay {
     date: string | Date,
@@ -14,8 +15,10 @@ export interface IEvent {
     startDate: string | Date,
     endDate?: string | Date,
     repeat: REPEAT_PERIOD,
-    category: Category
-    status?: Status;
+    category: Category,
+    status?: Status,
+    participants?: string,
+    completeDate?: string[] | Date []
 }
 
 export class Day implements IDay {
@@ -34,8 +37,10 @@ export class Event implements IEvent {
     public endDate: string | Date = '';
     public time: Time | undefined;
     public repeat = REPEAT_PERIOD.NONE;
-    public category: Category = Category.PERSONAL;
+    public category: Category = Category.HOME;
     public status: Status = Status.PROGRESS;
+    public participants = '';
+
 
     constructor(event?: IEvent){
         if(event)

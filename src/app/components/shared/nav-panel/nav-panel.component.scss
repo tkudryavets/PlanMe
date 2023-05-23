@@ -3,9 +3,10 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 5rem;
   width: 10rem;
-  height: 100%;
+  height: calc(100% - 8rem);
   padding: 2rem 2rem 5rem 2rem;
   background-color: $secondary-accent-100;
   margin-top: 0;
@@ -17,6 +18,7 @@
   gap: 1rem;
   padding: 0;
   margin: 0;
+  margin-top: 2rem;
   list-style-type: none;
   color: $primary-accent-500;
 
@@ -63,4 +65,14 @@ h4 {
   height: 100%;
   width: 100%;
   max-height: 5rem;
+}
+
+.logout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: $secondary-accent-700;
+  .mat-icon {
+    color: $secondary-accent-700;
+  }
 }

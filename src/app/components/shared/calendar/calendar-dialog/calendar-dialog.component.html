@@ -9,28 +9,38 @@
   </div>
   <mat-dialog-content class="mat-typography">
     <form [formGroup]="requestForm" validate>
-      <div class="dialog-content-item">
-        <mat-form-field>
-          <mat-label class="label">Date</mat-label>
-          <input
+      <div class="select-container">
+        
+        <div class="dialog-content-item">
+          <mat-form-field>
+            <mat-label class="label">Date</mat-label>
+            <input
             matInput
             [matDatepicker]="picker"
             placeholder="дд/мм/гггг"
-            formControlName="date"
-            
-          />
-          <mat-datepicker-toggle matSuffix [for]="picker">
-            <mat-icon matDatepickerToggleIcon class="material-icons-outlined">
-              calendar_today
-            </mat-icon>
-          </mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
+              formControlName="date"
+              
+            />
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon class="material-icons-outlined">
+                calendar_today
+              </mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="dialog-content-item">
+          <mat-checkbox formControlName="status">Completed</mat-checkbox>
+        </div>
       </div>
-      
+
       <div class="dialog-content-item">
         <mat-label class="label">Event</mat-label>
         <textarea matInput class="textarea" formControlName="name" rows="2"></textarea>
+      </div>
+      <div class="dialog-content-item">
+        <mat-label class="label">Participants</mat-label>
+        <textarea matInput class="textarea" formControlName="participants" rows="1"></textarea>
       </div>
 
       <div class="select-container">

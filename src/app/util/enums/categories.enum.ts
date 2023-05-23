@@ -1,8 +1,9 @@
 export enum Category {
-    PERSONAL = 'Личная жизнь',
-    WORK = 'Работа',
-    HOUSE = 'Дом',
-    SPORT = 'Спорт',
-    STUDY = 'Саморазвитие',
-    OTHER = 'Иное'
+    HOME = 'Home',
+    WORK = 'Work',
+    SPORT = 'Sport',
+    EDUCATION = 'Education',
+    RELATIONSHIPS = 'Relationships',
+    HEALTH = 'Health',
+    ENTERTAIMENT = 'Entertaiment'
 };

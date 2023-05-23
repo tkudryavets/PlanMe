@@ -1,6 +1,5 @@
 <h2>Dashboard</h2>
 <div class="main-container">
-
     <div class="diagram-block" id="chart-1">
         <apx-chart
         [series]="chartOptions.series"
@@ -11,6 +10,21 @@
         [responsive]="chartOptions.responsive"
         [yaxis]="chartOptions.yaxis"
         [title]="chartOptions.title"
-    ></apx-chart>
+        [colors]="chartOptions.colors"></apx-chart>
     </div>
+    <div  class="diagram-block" id="chart-2">
+        <apx-chart
+          [series]="chartOptions2.series"
+          [chart]="chartOptions2.chart"
+          [stroke]="chartOptions2.stroke"
+          [dataLabels]="chartOptions2.dataLabels"
+          [plotOptions]="chartOptions2.plotOptions"
+          [xaxis]="chartOptions2.xaxis"
+          [colors]="chartOptions2.colors"
+          [fill]="chartOptions2.fill"
+          [yaxis]="chartOptions2.yaxis"
+          [title]="chartOptions2.title"
+          [legend]="chartOptions2.legend"
+        ></apx-chart>
+      </div>
 </div>

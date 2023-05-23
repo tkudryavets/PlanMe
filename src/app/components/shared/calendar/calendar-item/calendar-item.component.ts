@@ -1,11 +1,11 @@
 import { Component, DoCheck, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngxs/store';
-import { IDay } from 'src/app/components/interfaces/IDay.interface';
-import { WEEK } from 'src/app/util/const/week.const';
-import { REPEAT_PERIOD } from 'src/app/util/enums/repeat-period.enum';
+import { IDay } from 'app/components/interfaces/IDay.interface';
+import { UpdatePlanAction } from 'app/states/plans.actions';
+import { WEEK } from 'app/util/const/week.const';
 import { CalendarDialogComponent } from '../calendar-dialog/calendar-dialog.component';
-import { UpdatePlanAction } from 'src/app/states/plans.actions';
+
 
 @Component({
   selector: 'app-calendar-item',

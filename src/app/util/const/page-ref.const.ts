@@ -16,8 +16,8 @@ export interface PageRefModel {
 
 export class PageRefConst {
 	static readonly LOGIN: PageRefModel = {
-		name: 'auth/login',
-		link: '/auth/login',
+		name: 'login',
+		link: '/login',
         title: 'Authorization'
 	};
 

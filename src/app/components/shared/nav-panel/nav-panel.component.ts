@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { PageRefConst } from 'src/app/util/const/page-ref.const';
+import { Store } from '@ngxs/store';
+import { LogoutAction } from 'app/states/auth/auth.actions';
+import { PageRefConst } from 'app/util/const/page-ref.const';
+
 
 @Component({
   selector: 'app-nav-panel',
@@ -11,7 +14,9 @@ export class NavPanelComponent {
   public readonly navigationLinks = PageRefConst.NAV_PANEL_LINKS;
   public currentUser: string = '';
 
-  constructor() {
-   // this.currentUser = this.authService.currentUser;
+  constructor(private store: Store) {}
+
+  logout() {
+    this.store.dispatch(new LogoutAction())
   }
 }

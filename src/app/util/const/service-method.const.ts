@@ -9,16 +9,16 @@ export interface ServiceMethodModel {
 
 export class ServiceMethodConst {
 	public static readonly SESSION_LOGIN: ServiceMethodModel = {
-		name: 'session/login',
+		name: 'http://34.118.23.170/login',
 		type: TypeRequest.POST
 	};
 
     public static readonly SESSION_LOGOUT: ServiceMethodModel = {
-		name: 'session/logout',
+		name: 'http://34.118.23.170/logout',
 		type: TypeRequest.POST
 	};
 	public static readonly ADD_PLAN: ServiceMethodModel = {
-		name: '',
+		name: 'http://34.118.23.170/events',
 		type: TypeRequest.POST
 	}
 }
